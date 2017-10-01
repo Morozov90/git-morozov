@@ -4,11 +4,11 @@ var elem = document.getElementsByClassName("accordion_tog");
 var i;
 
 for (i=0; i < acc.length; i++){
-	acc[i].onclick = function () {
+	acc[i].addEventListener("click", function () {
 		if (!(this.classList.contains("active"))) {
 			for (i=0; i < acc.length; i++){
-				acc[i].classList.remove("active");	
-				this.firstElementChild.innerHTML = '+';			
+				acc[i].classList.remove("active");
+				acc[i].firstElementChild.innerHTML = '+';
 				acc[i].nextElementSibling.classList.remove("show");
 			}
 			this.classList.add("active");
@@ -19,5 +19,5 @@ for (i=0; i < acc.length; i++){
 			this.firstElementChild.innerHTML = '+';
 			this.nextElementSibling.classList.remove("show");
 		}
-	}
+	});
 }
