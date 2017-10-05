@@ -21,3 +21,11 @@ for (i=0; i < acc.length; i++){
 		}
 	});
 }
+
+var tog = document.querySelector(".main-head .toggle_mnu");
+var sandwich = document.querySelector(".main-head .menu");
+
+tog.addEventListener("click", function () {
+    sandwich.classList.toggle("active");
+
+});

@@ -9,22 +9,21 @@ body {
 }
 
 .main-head {
-	background-color: f4f1f2;
+	background-color: #f4f1f2;
 	height: 90px;
+	display: flex;
+	padding-bottom: 30px;
 }
 
 .logo{
-	margin-left: 120px;	
-	float: left;
+	margin: 0 auto;
 }
 
 .menu {
 	text-transform: uppercase;
 	list-style: none;
-	display: inline-block;	
 	margin-right: 50px;
-	display: inline-block;
-	float: right;
+	z-index: 999;
 }
 
 .menu li {
@@ -43,8 +42,89 @@ body {
 	color: rgb(66,192,217);
 }
 
+.toggle_mnu {
+	display: none;
+	background: rgb(66,192,217);
+	width: 60px;
+	height: 60px;
+	position: fixed;
+	z-index: 100;
+	border: none;
+	right: 20px;
+	top: 20px; }
+.toggle_mnu span {
+	display: block; }
+
+.sandwich {
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	top: 8px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 200;
+}
+
+.sw-topper {
+	position: relative;
+	top: 0;
+	width: 28px;
+	height: 3px;
+	background: white;
+	border: none;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-transition: -webkit-transform 0.5s, top 0.2s;
+	transition: transform 0.5s, top 0.2s;
+	display: block;
+}
+
+.sw-bottom {
+	position: relative;
+	width: 28px;
+	height: 3px;
+	top: 6.6px;
+	background: white;
+	border: none;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-transition: -webkit-transform 0.5s, top 0.2s;
+	transition: transform 0.5s, top 0.2s;
+	-webkit-transition-delay: 0.2s, 0s;
+	transition-delay: 0.2s, 0s; }
+
+.sw-footer {
+	position: relative;
+	width: 28px;
+	height: 3px;
+	top: 13.5px;
+	background: white;
+	border: none;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s; }
+
+.sandwich.active .sw-topper {
+	top: 9px;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg); }
+.sandwich.active .sw-bottom {
+	top: 6px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg); }
+.sandwich.active .sw-footer {
+	opacity: 0;
+	top: 0;
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
 .head-container {
-	margin-top: 30px;
 	background-image: url(../img/2.jpg);
 	min-height: 800px;
 	background-size: cover;
@@ -83,9 +163,10 @@ body {
 }
 
 .head-container .after h1{
-	font-size: 56px;
+	font-size: 50px;
 	margin: 0;
-	text-transform: uppercase; 
+	text-transform: uppercase;
+	text-align: center;
 
 }
 
@@ -95,10 +176,9 @@ body {
 }
 
 .head-btn  a{
-	text-transform: uppercase; 
-	font-size: 28px;
-	padding: 15px;
+	text-transform: uppercase;
 	color: #000;
+	padding: 5px;
 	background: #fff;
 	border:0;
 	outline: 0;
@@ -110,8 +190,8 @@ body {
 	background: rgb(66,192,217);
 }
 
-.head-btn a:first-child{
-	margin-right: 50px;
+.head-btn .contact{
+	margin-right: 30px;
 }
 
 .sec_1_name {
@@ -125,7 +205,6 @@ body {
 	padding: 10px 40px;	
 	text-transform: uppercase;
 	background: rgb(66,192,217);
-	margin: 30px 0 0 0;
 	border: 4px double #FFF;
 	margin-bottom: 25px;
 }
@@ -151,7 +230,6 @@ body {
 .elements {
 	padding: 50px;	
 	display: flex;
-	
 }
 
 .element {
@@ -177,7 +255,7 @@ body {
 
 .con_2_bg {
 	background-image: url(../img/3.jpg);
-	min-height: 600px;	
+	min-height: 670px;
 	background-size: cover;
 	background-position: center center;
 	position: relative;	
@@ -199,7 +277,6 @@ body {
 	background: rgba(74,74,77,0.5);	
 	padding: 40px;
 	color: #fff;
-	 
 	border-radius: 10px;
 }
 
@@ -227,9 +304,8 @@ body {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	height: 180px;
+	height: auto;
 	background: rgba(74,74,77,0.5);
-	
 }
 
 .slide_con_2 h2 {
@@ -355,7 +431,6 @@ button.accordion {
 	padding-left: 30px;
 	width: 100%;
 	text-align: left;
-	border:none;
 	border: 1px solid rgb(47,179,205);
 	transition: 0.4s;
 }
